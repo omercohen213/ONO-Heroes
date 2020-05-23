@@ -5,14 +5,13 @@ import java.util.ArrayList;
 import java.util.Random;
 
 import Players.Player;
-import Players.PlayerSprite;
-import Players.Shot;
+import Players.Shots;
 
 public class Samurai extends Player {
     private String skill;
     private int ammo;
     private int manaCost = 2; // this is temporary for all players for only fire attack
-    private ArrayList<Shot> Shots;// Holds number of Shots on screen
+    private ArrayList<Players.Shots> Shots;// Holds number of Shots on screen
     private int shotDirX = 1; // shot direction; starts right as the player starts standing right
     private double posX;
 
@@ -20,7 +19,7 @@ public class Samurai extends Player {
     public Samurai(BufferedImage img, String name) {
         super(100, 100, 60, 100, 100, 3, "omercohen213", "Samurai", 0, 51, 1000, img);
         this.skill = "speed";
-        Shots = new ArrayList<Shot>();// j
+        Shots = new ArrayList<Players.Shots>();// j
         ammo = 100;
         posX = 150;
 
@@ -76,7 +75,7 @@ public class Samurai extends Player {
                 // down and how fast
                 Random r = new Random();
                 double rndDirY = r.nextDouble() * (r.nextBoolean() ? -1 : 1);
-                Shot shot = new Shot((posX + 100), (this.getPlayerSprite().getY() + 30), shotDirX, this, rndDirY, this.getPlayerSprite());
+                Players.Shots shot = new Shots((posX + 100), (this.getPlayerSprite().getY() + 30), shotDirX, this, rndDirY, this.getPlayerSprite());
                 Shots.add(shot);
             }
         }
@@ -87,7 +86,7 @@ public class Samurai extends Player {
         return ammo;
     }
 
-    public ArrayList<Shot> getShots() {
+    public ArrayList<Players.Shots> getShots() {
         return Shots;
     }
 

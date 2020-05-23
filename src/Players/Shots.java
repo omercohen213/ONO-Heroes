@@ -5,7 +5,7 @@ import java.util.Random;
 
 import javax.swing.*;
 
-public class Shot{
+public class Shots {
     private double x, y; //CURRENT location of the Shot
     private double distance;
     private double dirY; // random Y axis direction
@@ -15,7 +15,7 @@ public class Shot{
     private boolean visible; // sets weather THIS Shot is visible or not
 
 
-    public Shot(double startX, double startY, int dirX, Player player,double dirY, PlayerSprite PlayerSprite) {
+    public Shots(double startX, double startY, int dirX, Player player, double dirY, PlayerSprite PlayerSprite) {
         ImageIcon newShot;
         this.dirX = dirX;
         if (this.dirX == 1)

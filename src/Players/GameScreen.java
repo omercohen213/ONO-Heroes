@@ -11,7 +11,6 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.TimerTask;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
@@ -61,7 +60,7 @@ public class GameScreen extends JPanel implements ActionListener, Runnable {
             e.printStackTrace();
         }
         // call this when player kills an enemy
-        int xpReward = 15; // should be: xpReward = (enemy.getXpRward);
+        int xpReward = 15; // should be: xpReward = (enemy.getXpReward);
         player.levelManager(xpReward);
 
         addKeyListener(new AL());
@@ -76,10 +75,9 @@ public class GameScreen extends JPanel implements ActionListener, Runnable {
 
     public void samuraiShots() {
         Samurai samurai= (Samurai) (PlayerSprite.getPlayer());
-        ArrayList<Shot> Shots = samurai.getShots();
+        ArrayList<Shots> Shots = samurai.getShots();
         for (int i = 0; i < Shots.size(); i++) {
-
-            Shot shot = (Shot) Shots.get(i);// This is how to get a current element in an arrayList
+            Players.Shots shot = (Players.Shots) Shots.get(i);// This is how to get a current element in an arrayList
             if (shot.getVisible() == true) {
                 shot.move();
             } else
@@ -96,7 +94,7 @@ public class GameScreen extends JPanel implements ActionListener, Runnable {
     }
 
     public void paint(Graphics g) {
-        if (PlayerSprite.getDirY() == 1 && stopAnimation == false) {
+        if (PlayerSprite.getDirY() == 1 && !stopAnimation) {
             JumpAnimation = new Thread(this);
             JumpAnimation.start();
             stopAnimation = true;
@@ -133,13 +131,13 @@ public class GameScreen extends JPanel implements ActionListener, Runnable {
 
 
 
-        if(PlayerSprite.getPlayer() instanceof Samurai)// In case of Samorai
+        if(PlayerSprite.getPlayer() instanceof Samurai)// In case of Samurai
         {
             PlayerSprite.getPlayer().setPlayerSprite(PlayerSprite);
-            ArrayList<Shot> Shots = ((Samurai) (PlayerSprite.getPlayer())).getShots();
+            ArrayList<Shots> Shots = ((Samurai) (PlayerSprite.getPlayer())).getShots();
 
             for (int i = 0; i < Shots.size(); i++) {
-                Shot shot = (Shot) Shots.get(i);// This is how to get a current element in an arrayList
+                Players.Shots shot = (Players.Shots) Shots.get(i);// This is how to get a current element in an arrayList
                 g2d.drawImage(shot.getImage(), (int) shot.getX(), (int) shot.getY(), null);
             }
 

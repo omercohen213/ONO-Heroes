@@ -1,19 +1,13 @@
 package Enemies;
 
-import Players.Player;
-import Players.Shot;
-
 import java.awt.*;
 
 import java.awt.event.KeyEvent;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Random;
 
 import javax.imageio.ImageIO;
-import Enemies.Enemy;
 
 public class EnemySprite {
     private double dirX=1;
