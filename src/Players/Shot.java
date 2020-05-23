@@ -19,9 +19,9 @@ public class Shot{
         ImageIcon newShot;
         this.dirX = dirX;
         if (this.dirX == 1)
-            newShot = new ImageIcon("src\\Players\\" + player.getClassName() + "\\IMG\\shot_right.png");
+            newShot = new ImageIcon("src\\Players\\" + player.getClassName() + "\\Images\\shot_right.png");
         else
-            newShot = new ImageIcon("src\\Players\\" + player.getClassName() + "\\IMG\\shot_left.png");
+            newShot = new ImageIcon("src\\Players\\" + player.getClassName() + "\\Images\\shot_left.png");
         img = newShot.getImage();
         img = img.getScaledInstance(50, 50, java.awt.Image.SCALE_SMOOTH);
         x = startX;
