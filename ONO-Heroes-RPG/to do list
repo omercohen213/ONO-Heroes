@@ -1,0 +1,35 @@
+-------------------------------------------------
+Created by:
+"Nouriel Aronov"
+"Omer Cohen"
+"Or Bachar"
+-------------------------------------------------
+
+-edit levelsXp array
+-edit mana regeneration instead of count
+-sprint:
+	 right left or left right fast and shift -bug
+	 disable shooting while running
+	 running right- release right and press left not running - bug
+	 fix smoke
+-change variable names PosX and x
+-add player skills
+-add enemies:
+	 make the zombie move (the enemy.x changes but the picture doesn't
+	 AI?
+	 fix EnemySprite function is not called
+-add map
+-add teleport
+-change samurai to melee attack
+-reload ammo
+-add sounds
+-seperate graphics and logic from GameScreen
+-generic game screen size
+
+-------------------------------------------------
+Last Update:
+
+21.5.20
+1. Added enemy zombie (but must fix bugs)
+2. The whole game is now on a JFrame and each state chosen makes the JPanel change
+
